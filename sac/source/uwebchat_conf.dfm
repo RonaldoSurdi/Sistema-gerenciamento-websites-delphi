@@ -1,0 +1,1563 @@
+object webchat_conf: Twebchat_conf
+  Left = 288
+  Top = 311
+  AutoScroll = False
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Confer'#234'ncias'
+  ClientHeight = 544
+  ClientWidth = 792
+  Color = 16119285
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PageControl_principal: TPageControl
+    Left = 0
+    Top = 0
+    Width = 792
+    Height = 525
+    ActivePage = TabSheet1
+    Align = alClient
+    Style = tsFlatButtons
+    TabOrder = 0
+    TabStop = False
+    OnChange = PageControl_principalChange
+    object TabSheet1: TTabSheet
+      Caption = 'Confer'#234'ncias Ativas'
+      ImageIndex = 5
+      object Splitter2: TSplitter
+        Left = 0
+        Top = 260
+        Width = 784
+        Height = 5
+        Cursor = crVSplit
+        Align = alBottom
+        Beveled = True
+      end
+      object Label_ativa: TLabel
+        Left = 0
+        Top = 49
+        Width = 784
+        Height = 24
+        Align = alTop
+        Alignment = taCenter
+        Caption = 'Nenhuma Confer'#234'ncia Ativa no momento.'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clGray
+        Font.Height = -19
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        Visible = False
+      end
+      object GroupBox1: TGroupBox
+        Left = 0
+        Top = 73
+        Width = 784
+        Height = 187
+        Align = alClient
+        Caption = 'Lista de Confer'#234'ncia Ativas:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -9
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        object Splitter5: TSplitter
+          Left = 594
+          Top = 15
+          Height = 170
+          Align = alRight
+        end
+        object DBGrid1: TDBGrid
+          Left = 2
+          Top = 15
+          Width = 592
+          Height = 170
+          Hint = 'Duplo clique para incluir m'#243'dulo'
+          Align = alClient
+          Color = clWhite
+          FixedColor = 15066597
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Verdana'
+          Font.Style = []
+          Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clBlack
+          TitleFont.Height = -9
+          TitleFont.Name = 'Verdana'
+          TitleFont.Style = []
+          OnCellClick = DBGrid1CellClick
+          OnDblClick = DBGrid1DblClick
+          OnKeyDown = DBGrid1KeyDown
+          OnKeyUp = DBGrid1KeyUp
+        end
+        object DBMemo1: TDBMemo
+          Left = 597
+          Top = 15
+          Width = 185
+          Height = 170
+          TabStop = False
+          Align = alRight
+          BevelOuter = bvNone
+          BorderStyle = bsNone
+          Color = 16119285
+          ReadOnly = True
+          ScrollBars = ssVertical
+          TabOrder = 1
+        end
+      end
+      object CoolBar1: TCoolBar
+        Left = 0
+        Top = 0
+        Width = 784
+        Height = 49
+        Bands = <
+          item
+            Break = False
+            Control = ToolBar2
+            FixedSize = True
+            ImageIndex = -1
+            MinHeight = 40
+            Text = 'Confer'#234'ncias Ativas'
+            Width = 795
+          end>
+        FixedSize = True
+        FixedOrder = True
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -13
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        object ToolBar2: TToolBar
+          Left = 127
+          Top = 0
+          Width = 668
+          Height = 40
+          ButtonHeight = 38
+          Caption = 'ToolBar1'
+          EdgeBorders = []
+          TabOrder = 0
+          object bt_new: TSpeedButton
+            Left = 0
+            Top = 2
+            Width = 123
+            Height = 38
+            Hint = 'Criar nova confer'#234'ncia'
+            Caption = 'Criar nova'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Verdana'
+            Font.Style = []
+            Glyph.Data = {
+              9E020000424D9E02000000000000360100002800000012000000120000000100
+              08000000000068010000120B0000120B00004000000000000000835C36005A85
+              AD0000FF0000F2D4B100E1C9AB004E7BA60000CCFF009966660082FEFE009999
+              9900EDF1F100CCFFFF008A633D00AE885E008DA6BD003253760033CCFF00FDF1
+              DD00E1C7A300FBE9C400FEFCF100C6A584009E794D00B0B6B500FEF8EF00FDF0
+              D700E4D1BC00956E4700FEF6E600A5835F00FFFFFF00B8956A00FCEED00042D5
+              FE00E9D8C300E2D3B900FFF7DE00FEFAF600E4D3B900816039008B664000B18A
+              63008CAAC500537CA50095744D008F6B4300FEFCF700F4D3B200E9D8BD00FFFF
+              FF00000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000313131313131
+              3131313131313131313131310000313131313131090909090909090909093131
+              00003131313131161B1B2D282828272700093131000031313131311D11111120
+              2013131300093131000031313131311D1C111111202020130009313100003131
+              3131310D1C1C1C111120202000093131000031313131312918181C1C11111120
+              0009313100003131313131291818181C1C111111000931310000313131313107
+              252518181C222204000931310000310605311E072E0E0B182315152C00093131
+              0000310A062B0807010B2E2E2614141200093131000031310B06100F081E1E2E
+              1A252F00093131310000312B2B101E100101012A1A0300093131313100001E1E
+              101E1E1E10080B1E1F1F173131313131000031312B101E100605313131313131
+              313131310000312B0831212B08062B3131313131313131310000310A31311E2B
+              310A063131313131313131310000313131311E31313131313131313131313131
+              0000}
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            OnClick = bt_newClick
+          end
+          object bt_edit: TSpeedButton
+            Left = 123
+            Top = 2
+            Width = 100
+            Height = 38
+            Hint = 'Editar confer'#234'ncia selecionada'
+            Caption = 'Editar'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Verdana'
+            Font.Style = []
+            Glyph.Data = {
+              9E030000424D9E03000000000000360200002800000012000000120000000100
+              08000000000068010000120B0000120B00008000000000000000000000009F77
+              4D0000FF0000E8D3AD00089BC3007FFFFE002F89AB00999999008C653900B1B6
+              B5008499A10082552900FF990000FCF1DB00977FA10033BCD600473B4F00BA98
+              740070410D00A06FA700E9AAF4007B5C8900563C35000066CC0033CCFF00CBDE
+              D500FDFAF600B38F6700FFB95C00C7AA7E0097704A00E4CDAD006E677400BA8A
+              C4008DC6CF00FAEED600D9C39F000894C5008A847700F1D5B200FFF8EF00AB86
+              6000583C350086613B00BB946D00926E4A00C9AF8B00A5815900FFFFFF00F9E5
+              BC00E2D2BB00FEF5E700E1D0BB00D2BFAA00C8B28F008F6A440031B5DE00AD90
+              6B0084FDFF00BD9A6F00815E3300FFF7DE00BD9B7000FFFFF700BC84CD00FFFF
+              EF0087654100B6926A00CBB08E00E5D3BC008B664000D8C4A100F7D6B500AF8A
+              6400CDB38F00FFFFFF0000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              00000000000000000000000000000000000000000000000000004B4B4B4B4B4B
+              4B4B4B4B4B4B4B4B4B4B4B4B00004B4B4B4B4B4B4B4B4B4B4B4B4B4B4B4B4B4B
+              00004B4B4B070707070707070707074B4B4B4B4B00004B4B012D2D373742082B
+              2B3C074B4B4B4B4B00004B4B2F2323234747031F312B074B4B4B4B4B00004B4B
+              290D0D000A26392E2E46074B4B4B4B4B00004B4B29333322300F174A4A37074B
+              4B4B4B4B00004B4B4933331905180F17360B074B4B4B4B4B00004B4B1B282833
+              0405180F1712074B4B4B4B4B00004B4B4328282833043A180F17074B4B4B4B4B
+              00004B4B2C1A1A1A28450405180F174B4B4B4B4B00004B4B2C30301A1A343404
+              3A180F174B4B4B4B00004B4B1130303030341A27040518062A4B4B4B00004B4B
+              3E3030303045271D3504040C1C164B4B00004B4B3B3B11112C2C2C094B4B1E30
+              1340104B00004B4B4B4B4B4B4B4B4B4B4B4B4B1E1421204B00004B4B4B4B4B4B
+              4B4B4B4B4B4B4B4B150E4B4B00004B4B4B4B4B4B4B4B4B4B4B4B4B4B4B4B4B4B
+              0000}
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            OnClick = bt_edit2Click
+          end
+          object bt_finaliza1: TSpeedButton
+            Left = 223
+            Top = 2
+            Width = 100
+            Height = 38
+            Hint = 'Finalizar confer'#234'ncia selecionada'
+            Caption = 'Finalizar'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Verdana'
+            Font.Style = []
+            Glyph.Data = {
+              26010000424D260100000000000046000000280000000E0000000E0000000100
+              080000000000E0000000120B0000120B000004000000000000000000000000FF
+              FF00FFFFFF000201FE0002020202020000000002020202020000020202000001
+              0201020000020202000002020002010201020102010002020000020002010201
+              0000020102010002000002000102010200000102010200020000000102010201
+              0201020102010200000000020102010200000102010201000000000102010201
+              0000020102010200000000020102010200000102010201000000020002010201
+              0000020102010002000002000102010200000102010200020000020200010201
+              0201020102000202000002020200000201020100000202020000020202020200
+              00000002020202020000}
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            OnClick = bt_finaleClick
+          end
+          object bt_exclui1: TSpeedButton
+            Left = 323
+            Top = 2
+            Width = 100
+            Height = 38
+            Hint = 'Excluir confer'#234'ncia selecionada'
+            Caption = 'Excluir'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Verdana'
+            Font.Style = []
+            Glyph.Data = {
+              56010000424D5601000000000000560000002800000010000000100000000100
+              08000000000000010000120B0000120B00000800000000000000FFFFFF0000FF
+              FF000000FF000000990000000000FFFFFF000000000000000000000000000000
+              0000000000000000000000020004040404040404040404040202000202040100
+              0100010001000102020000000202000100010001000102030000000000030200
+              0100010001020204000000000004020200010001020201040000000000040102
+              0200010202010004000000000004000102020202010001040000000000040100
+              0102020200010004000000000004000100020202020001040000000000040100
+              0202010002020004000000000004000202010001040202040000000000040202
+              0100010004010203000000000003020100010001040404020200000002020404
+              0404040404040000020200020200000000000000000000000002}
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            OnClick = bt_delClick
+          end
+          object bt_acess: TSpeedButton
+            Left = 423
+            Top = 2
+            Width = 212
+            Height = 38
+            Hint = 'Entrar em confer'#234'ncia selecionada'
+            Caption = 'Entrar em Confer'#234'ncia'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Verdana'
+            Font.Style = [fsBold]
+            Glyph.Data = {
+              36080000424D3608000000000000360400002800000020000000200000000100
+              08000000000000040000120B0000120B0000000100000001000007681D00E4E0
+              E300BDBDBD0000F19200469F500000CC520093C09A00D6D6D60055FABC0085BC
+              8C0026923800F8FFFC00BEF0C7005CD9890052BD7B0038AB610000990000A5F2
+              CA00D6EED60095D5980011B33800E8FFF6003CE28B0000D35B004AB36900B5D7
+              BA00A0EEC00001B82A0033CC660082D88E000D8D290082A88600E4F1E50030E3
+              8A003CB94100AFAFAF00B2D6B400DEF8E20025D66B004CBA6E0076AA7B008BEF
+              BB003EAD420023B1510052C05200BFF9DC000F9E1600CCCCCC0061EAA4000991
+              1200C2D8C600ACFFE1008CE9B10039C35100A2D5A80024E4880000E0780041F2
+              A700E6F7E70000BD320077EBAD0036CF7B0063BD7600F6F2F500DEDEDE003F8E
+              50006DB57B00049C3A0070DEA100A3B7A7000085190000AF16008CC797004E9E
+              600062B2730071C3790078C385009CF6CC006CFAC500178D2C005EEDA800BCD0
+              BF00A2CAA80091E8B300DEF0DF001CCA5800C3FFE800EBE7EA002BEFA20025AF
+              2600C5E7C600AEF7D5000CC3420004A80F0025C958009ADAAA00BBDEB00045E6
+              9500CFEDD000F7F6F7001EFDAF0019D66C00D6FEEE00BAE4BC007CBD7B00E6FA
+              EB0080CB8C0053C7590011DA71005DA868005EC7850060A165009FD0A700379D
+              490045D071008DD8A2004ED2710068EDAC006BE1980002FDA90021993800D6F5
+              E00026DB770032E0800063D2740012AC1900C8F6D400EFF0F0000F7C250091FC
+              D200088C24001AB62D00A9E3B200C4C4C400B7FDE000B2EEC800CCF7DF0034C0
+              570082E19F004AB563001DA21C000B8C2F0049AB560019923400DFFDEF0097D6
+              A5003BEB9B00D0E0D20047F8B300F7FFF700E6E6E600ECFCEF0073CA740098C8
+              A10001BF3B0002A609007EF4BC00A4E7AF000DA810003FB949000FC549002EFA
+              AF005DB36A005EFFC60088C28F00CDFAE50097C197004FA96000FFFFFF00DEF6
+              E10095F6C9005DD5800000D96A003FCB640067C481007AE78F007EECB20023EF
+              9A0023CC690030D674003BBF6B00D5DCD700B6B6B6006DE6A400EDFEF600BFE7
+              C500C9E5CB0034B94E00C1EFCF0085DDA400048421008FCE9C009EE5AF0088CB
+              8D008DE3A80028E1840058B95F0051E19000E0E7E000BAD9C0001B8D310049E8
+              9B0085F4C20010922A0004CE570047FFC3007CC289002E983D00A5F5CD0037F7
+              AE006BB5730072FECB00EEE9ED002AB6320036A44A00EFF8EF00FCF2FA0097DF
+              A70052BE7300A9FFE40000E88100519D590015932F002EC95A0065E29A0028B2
+              5B0000F79E0058D0860002B3200006A911002DE696003CE39100CEFFEC00D4FF
+              F700B3FFE400DFFFF700B3DBB5007DBE85000CD464003BD16D007DAD8600EAEB
+              EB0008A81900CAD5CC0040D5780072C4840085D18600BFD0C20017C86300B4F9
+              D90000C74900CEF0D60017E17F0058AE65006DF4B8009AFFDF00A8A8A8A8A8A8
+              969663A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A896
+              23B6B60207570BA8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A807
+              0740402F85B6B68507F10BA8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A82F
+              B5B540409696400785020285B57F0BA8A8A8A8A8A8A8A8A8A8A8A8A8A8A87F2F
+              0101969696010196D4D401072F02022F407FA8A8A8A8A8A8A8A8A8A8A8A89607
+              40963636C793C657575757577F7F96B52F85852F407FA8A8A8A8A8A8A8A84040
+              01934A42EDED487019BA409657D47F636363F1402F858501A8A8A8A8A8A80740
+              5799BE7871A7D2CEBF9191915251B5967F3F63636363F1073FA8A8A8A8630796
+              D44A464F4FCF8E3E6A4CEDA4A4A4A4065251F3B5963F0B6363A8A8A8A8F107D4
+              9671820A04A7FDA23EDAE3E044BD73BFBF0928281F40A83FA8A8A8A8A801017F
+              32DE8FD6DDDDA718273DE65858E7E3AEDA186D6F28D46363A8A8A8A8A840963F
+              9982780A0A180EE1B2924E9CAB5092F82B6E6EC8F0A83F3FA8A8A8A8A807F1D4
+              4A824F008DE1BBEF9CEAEB54605A87FEB389B443F7A83FA8A8A8A8A87F407F40
+              71CB80008D7D2CD94D33E9BC1384662D53359B0FD8D863A8A8A8A8A896967FF7
+              4FDEDE00312C9872A194B7EF5EADB0FFC2F6592AA83F3FA8A8A8A8A84057D806
+              46CB8F31D59F9E1777FC26657BB3C5CD61222C9B13A8A8A8A8A8A8A8403F3F49
+              461E1E2E839B4738E2B13792C930E03921E4837D8CF1A8A8A8A8A86301635741
+              BEBE82F2E5101B380364D10881AAD03CE0CC9AE410A6A8A8A8A8A8637F7F7F01
+              85454AA05C5D3BACDCE2A3D3FF5686F9297A059A5D68A8A8A8A8A8A8A87F7F7F
+              63A85F55167BCCCC215081E866EB1566CAC9EEFA4768A8A8A8A8A8A8A8A8A8A8
+              A8A85FF476C9DFB734AA4DA5B80B0B15F9506C051B4BA8A8A8A8A8A8A8A8A8A8
+              A8A8F50D8AB7C2DB5B11112D9090B8B8E8CAC3653B6AA8A8A8A8A8A8A8A8A8A8
+              A8A8F50D4D1A5BEAE9A58788902590792DF9757BA036A8A8A8A8A8A8A8A8A8A8
+              A8A81989292D11F98888BCBC887979FBB9B9C0741424A8A8A8A8A8A8A8A8A8A8
+              A8A863C4AF7EECEC67BCFBFB79791262675A676B2A63A8A8A8A8A8A8A8A8A8A8
+              A8A8A8EC7C90125A5A1212A9A9A9126267120C9F36A8A8A8A8A8A8A8A8A8A8A8
+              A8A8A8A8C19D0B5412123A3A3A3AA91262691D68A8A8A8A8A8A8A8A8A8A8A8A8
+              A8A8A8A863C1B997A9A9D7D7D7D73AA997844BD7A8A8A8A8A8A8A8A8A8A8A8A8
+              A8A8A8A8A863EC5A2569D70B0B0BD73AEC3663A8A8A8A8A8A8A8A8A8A8A8A8A8
+              A8A8A8A8A8A8A83A20D7D79595D754BA54A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8
+              A8A8A8A8A8A8A8A8A8A80B0B0B0B0BA8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8
+              A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8A8}
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            OnClick = bt_acessClick
+          end
+        end
+      end
+      object GroupBox4: TGroupBox
+        Left = 0
+        Top = 265
+        Width = 784
+        Height = 229
+        Align = alBottom
+        Caption = 'Usu'#225'rios Autorizados:'
+        TabOrder = 2
+        object Label6: TLabel
+          Left = 2
+          Top = 214
+          Width = 780
+          Height = 13
+          Align = alBottom
+          Caption = 'OBS.: Em vermelho ainda n'#227'o conectou.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -9
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ParentFont = False
+        end
+        object DBGrid1_usr: TDBGrid
+          Left = 2
+          Top = 15
+          Width = 780
+          Height = 199
+          Hint = 'Duplo clique para incluir m'#243'dulo'
+          Align = alClient
+          Color = clWhite
+          FixedColor = 15066597
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Verdana'
+          Font.Style = []
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clBlack
+          TitleFont.Height = -9
+          TitleFont.Name = 'Verdana'
+          TitleFont.Style = []
+          OnDrawColumnCell = DBGrid1_usrDrawColumnCell
+        end
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Confer'#234'ncias Agendadas'
+      ImageIndex = 4
+      object Splitter3: TSplitter
+        Left = 0
+        Top = 250
+        Width = 784
+        Height = 6
+        Cursor = crVSplit
+        Align = alBottom
+        Beveled = True
+      end
+      object GroupBox5: TGroupBox
+        Left = 0
+        Top = 256
+        Width = 784
+        Height = 238
+        Align = alBottom
+        Caption = 'Usu'#225'rios Autorizados:'
+        TabOrder = 0
+        object DBGrid2_usr: TDBGrid
+          Left = 2
+          Top = 15
+          Width = 780
+          Height = 221
+          Hint = 'Duplo clique para incluir m'#243'dulo'
+          Align = alClient
+          Color = clWhite
+          FixedColor = 15066597
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Verdana'
+          Font.Style = []
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clBlack
+          TitleFont.Height = -9
+          TitleFont.Name = 'Verdana'
+          TitleFont.Style = []
+        end
+      end
+      object CoolBar2: TCoolBar
+        Left = 0
+        Top = 0
+        Width = 784
+        Height = 49
+        Bands = <
+          item
+            Break = False
+            Control = ToolBar1
+            FixedSize = True
+            ImageIndex = -1
+            MinHeight = 46
+            Text = 'Confer'#234'ncias Agendadas'
+            Width = 837
+          end>
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -13
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        object ToolBar1: TToolBar
+          Left = 161
+          Top = 0
+          Width = 676
+          Height = 46
+          ButtonHeight = 38
+          Caption = 'ToolBar1'
+          EdgeBorders = []
+          TabOrder = 0
+          object bt_new2: TSpeedButton
+            Left = 0
+            Top = 2
+            Width = 123
+            Height = 38
+            Hint = 'Criar nova confer'#234'ncia'
+            Caption = 'Criar nova'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Verdana'
+            Font.Style = []
+            Glyph.Data = {
+              9E020000424D9E02000000000000360100002800000012000000120000000100
+              08000000000068010000120B0000120B00004000000000000000835C36005A85
+              AD0000FF0000F2D4B100E1C9AB004E7BA60000CCFF009966660082FEFE009999
+              9900EDF1F100CCFFFF008A633D00AE885E008DA6BD003253760033CCFF00FDF1
+              DD00E1C7A300FBE9C400FEFCF100C6A584009E794D00B0B6B500FEF8EF00FDF0
+              D700E4D1BC00956E4700FEF6E600A5835F00FFFFFF00B8956A00FCEED00042D5
+              FE00E9D8C300E2D3B900FFF7DE00FEFAF600E4D3B900816039008B664000B18A
+              63008CAAC500537CA50095744D008F6B4300FEFCF700F4D3B200E9D8BD00FFFF
+              FF00000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000313131313131
+              3131313131313131313131310000313131313131090909090909090909093131
+              00003131313131161B1B2D282828272700093131000031313131311D11111120
+              2013131300093131000031313131311D1C111111202020130009313100003131
+              3131310D1C1C1C111120202000093131000031313131312918181C1C11111120
+              0009313100003131313131291818181C1C111111000931310000313131313107
+              252518181C222204000931310000310605311E072E0E0B182315152C00093131
+              0000310A062B0807010B2E2E2614141200093131000031310B06100F081E1E2E
+              1A252F00093131310000312B2B101E100101012A1A0300093131313100001E1E
+              101E1E1E10080B1E1F1F173131313131000031312B101E100605313131313131
+              313131310000312B0831212B08062B3131313131313131310000310A31311E2B
+              310A063131313131313131310000313131311E31313131313131313131313131
+              0000}
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            OnClick = bt_new2Click
+          end
+          object bt_edit2: TSpeedButton
+            Left = 123
+            Top = 2
+            Width = 123
+            Height = 38
+            Hint = 'Editar confer'#234'ncia selecionada'
+            Caption = 'Editar'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Verdana'
+            Font.Style = []
+            Glyph.Data = {
+              9E030000424D9E03000000000000360200002800000012000000120000000100
+              08000000000068010000120B0000120B00008000000000000000000000009F77
+              4D0000FF0000E8D3AD00089BC3007FFFFE002F89AB00999999008C653900B1B6
+              B5008499A10082552900FF990000FCF1DB00977FA10033BCD600473B4F00BA98
+              740070410D00A06FA700E9AAF4007B5C8900563C35000066CC0033CCFF00CBDE
+              D500FDFAF600B38F6700FFB95C00C7AA7E0097704A00E4CDAD006E677400BA8A
+              C4008DC6CF00FAEED600D9C39F000894C5008A847700F1D5B200FFF8EF00AB86
+              6000583C350086613B00BB946D00926E4A00C9AF8B00A5815900FFFFFF00F9E5
+              BC00E2D2BB00FEF5E700E1D0BB00D2BFAA00C8B28F008F6A440031B5DE00AD90
+              6B0084FDFF00BD9A6F00815E3300FFF7DE00BD9B7000FFFFF700BC84CD00FFFF
+              EF0087654100B6926A00CBB08E00E5D3BC008B664000D8C4A100F7D6B500AF8A
+              6400CDB38F00FFFFFF0000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              00000000000000000000000000000000000000000000000000004B4B4B4B4B4B
+              4B4B4B4B4B4B4B4B4B4B4B4B00004B4B4B4B4B4B4B4B4B4B4B4B4B4B4B4B4B4B
+              00004B4B4B070707070707070707074B4B4B4B4B00004B4B012D2D373742082B
+              2B3C074B4B4B4B4B00004B4B2F2323234747031F312B074B4B4B4B4B00004B4B
+              290D0D000A26392E2E46074B4B4B4B4B00004B4B29333322300F174A4A37074B
+              4B4B4B4B00004B4B4933331905180F17360B074B4B4B4B4B00004B4B1B282833
+              0405180F1712074B4B4B4B4B00004B4B4328282833043A180F17074B4B4B4B4B
+              00004B4B2C1A1A1A28450405180F174B4B4B4B4B00004B4B2C30301A1A343404
+              3A180F174B4B4B4B00004B4B1130303030341A27040518062A4B4B4B00004B4B
+              3E3030303045271D3504040C1C164B4B00004B4B3B3B11112C2C2C094B4B1E30
+              1340104B00004B4B4B4B4B4B4B4B4B4B4B4B4B1E1421204B00004B4B4B4B4B4B
+              4B4B4B4B4B4B4B4B150E4B4B00004B4B4B4B4B4B4B4B4B4B4B4B4B4B4B4B4B4B
+              0000}
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            OnClick = bt_edit2Click
+          end
+          object bt_exclui2: TSpeedButton
+            Left = 246
+            Top = 2
+            Width = 100
+            Height = 38
+            Hint = 'Excluir confer'#234'ncia selecionada'
+            Caption = 'Excluir'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Verdana'
+            Font.Style = []
+            Glyph.Data = {
+              56010000424D5601000000000000560000002800000010000000100000000100
+              08000000000000010000120B0000120B00000800000000000000FFFFFF0000FF
+              FF000000FF000000990000000000FFFFFF000000000000000000000000000000
+              0000000000000000000000020004040404040404040404040202000202040100
+              0100010001000102020000000202000100010001000102030000000000030200
+              0100010001020204000000000004020200010001020201040000000000040102
+              0200010202010004000000000004000102020202010001040000000000040100
+              0102020200010004000000000004000100020202020001040000000000040100
+              0202010002020004000000000004000202010001040202040000000000040202
+              0100010004010203000000000003020100010001040404020200000002020404
+              0404040404040000020200020200000000000000000000000002}
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            OnClick = bt_delClick
+          end
+          object bt_email: TSpeedButton
+            Left = 346
+            Top = 2
+            Width = 175
+            Height = 38
+            Hint = 'Enviar AVISO via e-mail para usu'#225'rios autorizados'
+            Caption = 'Enviar e-mail AVISO'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Verdana'
+            Font.Style = []
+            Glyph.Data = {
+              56010000424D5601000000000000560000002800000010000000100000000100
+              08000000000000010000120B0000120B00000800000000000000FFFFFF00C0C0
+              C00080808000000080008000000000000000FFFFFF0000000000000000000000
+              0000000000000000000000050505050505050500000000000000000200000000
+              0000050505050505050000020002020202000501010101010500000200000000
+              0000050000000001050000020002000505050504000000010500000200000002
+              0000020000000001050000020000000200020404000303010500000202020202
+              0200000000030301050000000002010101010101010101010500000000000200
+              0000000000000005000000000000000200000000000005000000000000000000
+              0200000000050000000000000000000000020202020000000000000000000000
+              0000000000000000000000000000000000000000000000000000}
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            OnClick = bt_emailClick
+          end
+        end
+      end
+      object GroupBox9: TGroupBox
+        Left = 0
+        Top = 49
+        Width = 784
+        Height = 201
+        Align = alClient
+        Caption = 'Lista de Confer'#234'ncia Agendadas:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -9
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 2
+        object Splitter1: TSplitter
+          Left = 594
+          Top = 15
+          Height = 184
+          Align = alRight
+        end
+        object DBGrid2: TDBGrid
+          Left = 2
+          Top = 15
+          Width = 592
+          Height = 184
+          Hint = 'Duplo clique para incluir m'#243'dulo'
+          Align = alClient
+          Color = clWhite
+          FixedColor = 15066597
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Verdana'
+          Font.Style = []
+          Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clBlack
+          TitleFont.Height = -9
+          TitleFont.Name = 'Verdana'
+          TitleFont.Style = []
+          OnCellClick = DBGrid2CellClick
+          OnKeyDown = DBGrid2KeyDown
+          OnKeyUp = DBGrid2KeyUp
+        end
+        object DBMemo2: TDBMemo
+          Left = 597
+          Top = 15
+          Width = 185
+          Height = 184
+          Align = alRight
+          BevelOuter = bvNone
+          BorderStyle = bsNone
+          Color = 16119285
+          ReadOnly = True
+          ScrollBars = ssVertical
+          TabOrder = 1
+        end
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Hist'#243'rico de Confer'#234'ncias'
+      ImageIndex = 3
+      object Splitter4: TSplitter
+        Left = 0
+        Top = 250
+        Width = 784
+        Height = 6
+        Cursor = crVSplit
+        Align = alBottom
+        Beveled = True
+      end
+      object CoolBar3: TCoolBar
+        Left = 0
+        Top = 0
+        Width = 784
+        Height = 49
+        Bands = <
+          item
+            Break = False
+            Control = ToolBar4
+            FixedSize = True
+            ImageIndex = -1
+            MinHeight = 46
+            Text = 'Hist'#243'rico de Confer'#234'ncias'
+            Width = 942
+          end>
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -13
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        object ToolBar4: TToolBar
+          Left = 162
+          Top = 0
+          Width = 780
+          Height = 46
+          ButtonHeight = 38
+          Caption = 'ToolBar1'
+          EdgeBorders = []
+          TabOrder = 0
+          object bt_view: TSpeedButton
+            Left = 0
+            Top = 2
+            Width = 123
+            Height = 38
+            Hint = 'Visualizar dados da confer'#234'ncia selecionada'
+            Caption = 'Visualizar'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Verdana'
+            Font.Style = []
+            Glyph.Data = {
+              66010000424D6601000000000000760000002800000014000000140000000100
+              040000000000F000000000000000000000001000000010000000000000000000
+              8000008000000080800080000000800080008080000080808000C0C0C0000000
+              FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+              8888888800008888888888888888888800008800000444444000008800008007
+              7700FBFB00777008000000F7F7700FB00F7F770000000F7F7F770000F7F7F770
+              000007FFF7F700007FFF7F7000000FFFFF770000FFFFF770000000FFF7F00000
+              0FFF7F000000800F7F00000000F7F00800008800000003300000008800008888
+              4B00000000F48888000088884FBFB00FBFB48888000088884BFBFBF444448888
+              000088884FBFBFB4FB488888000088884BFBFBF4B4888888000088884FBFBFB4
+              4888888800008888444444448888888800008888888888888888888800008888
+              88888888888888880000}
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            OnClick = bt_viewClick
+          end
+          object bt_print: TSpeedButton
+            Left = 123
+            Top = 2
+            Width = 123
+            Height = 38
+            Hint = 'Imprimir confer'#234'ncia selecionada'
+            Caption = 'Imprimir'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Verdana'
+            Font.Style = []
+            Glyph.Data = {
+              F6010000424DF601000000000000B60000002800000012000000100000000100
+              08000000000040010000120B0000120B0000200000000000000060412A00F8E1
+              AF00C0885E00E4E4E400BEBEBE00E5C39400FFF8F000FFE5C300DFDFDF00C5C5
+              C500E9AF7D00F4D5A400FFD59E00CCCCCC00FFFCF900FFF1CF00FFF7C500FFEA
+              B700FFEFDB00D59D6F00FFDCAD00FFEDD500DCAF8100FFE3BE00FFFFFF00EFC5
+              9300FFECB900FFF6D600FFFFFF000000000000000000000000001C1C1C1C0603
+              03030303030303030303061C00001C1C1C030D04040404040404040404040D06
+              00001C1C0300000000000000000000000000040300001C030005101010101010
+              1010101010000403000006001B1B160101010101010101011100040300000010
+              0F0F131919191919191919190B0004030000001A1010020A0A0A0A0A0A0A0A0A
+              19000D06000000111918181818181818181818181800031C0000001918000000
+              000000000000001800031C1C000000181800170C0C0C0C0C0C0C0000081C1C1C
+              00000000000015141414141414140004031C1C1C00001C1C1C00060707070707
+              07070004031C1C1C00001C1C1C000E121212121212120004031C1C1C00001C1C
+              1C0018060606060606060004031C1C1C00001C1C1C001818181818181818000D
+              061C1C1C00001C1C1C00000000000000000000061C1C1C1C0000}
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            OnClick = bt_printClick
+          end
+          object bt_export: TSpeedButton
+            Left = 246
+            Top = 2
+            Width = 123
+            Height = 38
+            Hint = 'Exportar confer'#234'ncia selecionada'
+            Caption = 'Exportar'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Verdana'
+            Font.Style = []
+            Glyph.Data = {
+              E6050000424DE605000000000000360400002800000016000000120000000100
+              080000000000B0010000120B0000120B000000010000000000003C1709009999
+              990000FF0000AC471000F1D5B30093310F0033CCFF0042891100C0F07A00AE8B
+              6300C1C2C000876F5D00644B1F0099FFFF00D67F3500FBEED70054231300ECB3
+              640083704B001ECA6A00E7FFDE000242010080A95E0066524000A5ADAC00E47D
+              4400D06E440051AA3D0085613B00B1722E00FEFBF700C97D4900AAA89600FAED
+              D5001EA503006A6D1700A6987B00A1A78400D65D350058530800925B2E00E3C9
+              A500727B3200F9EACF00CAAD9E00E3CB9500AB8A5D002F4C07009FF694001A34
+              0400BE9A7200CD63240085D85E007D3C2000E6A95900A8855A00C4932D00F3E4
+              9F004C7A5D005343330066663300FDF5E6009E754E00F2A74500DFCBA800AF61
+              360066666600B4916600D9A35C00D2673B00975611001D5F0000F8E7C8005E54
+              320046991900ECC48300DA9C42008A777400D9DA9200B2AFAA0093908C00946D
+              4600E6D3B80073472A00533C2C0050572C0063483A00D39045007C5713009999
+              6600957D71008D613200DE944C00FFFFFF0082400F00C2A6830031861E00F1FA
+              A90041170B00BC956E00D26D4D007D4A3000D87B4A00CD7C4200FDF8EF00AB8E
+              73006A413200AFB8BB0073612C00DC5D2A00705D38008C492200B1B5B6003357
+              050089824B00855E38004D8F2000E6FAE3009F785200D8942900D0714A009FA3
+              A400FFF7DE0093745500B9511C00DE703C003F160D00EBDAC0008D603A00F9F2
+              DF00E6D7BD00FEFCF80097371900C3C8C900F4C165009A968300A29C8900593F
+              3800E69E4600897F7F008E939200FCF2E100BB977100B5956C0093734800F9EB
+              D000BCB9B100D37639006A493900CDB89D0065534800CE734000ADAD9400D761
+              320066666600B4B5AC007A4B2B0099663300D66B4A00794E3D00D27F5200D87E
+              4300E6FFE600A17F5400D8734600FFFFFF000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000A5A5A5A5A5A5
+              A5A5A5A5A5A5A5A5A5A5A5A5A5A5A5A50000A5010101010101010101A5A5A5A5
+              A5A5A5A5A5A5A5A50000511C1C1C1C1C1C1C1C01A5A57001508C18A5A5A5A5A5
+              0000378D8D0F0F2B2B4853010A0B9F946A9456426BA5A5A50000093D3D818121
+              9195104D9C846F997D19A1416579A5A5000009683D3D81819542067E0503717C
+              6D7D0E4C1F89A5A50000436868683D8D69750D06625E157133A41A9397498BA5
+              00008F1E1E68683D3D2C750D067E470000661A45265596A5000043838383817F
+              824080140D0600067E57A07864463BA50000635D5D83525F3E3E3E28140D0606
+              7E8A5C671D2754A500008E5D5D5D821E1E29765B35140D067E11443A232F17A5
+              0000325D5D5D526804A3016C140D0D0D7E4B774A07315AA50000325D5D5D5204
+              0901A56E3C127B905B2D3F22600C4FA5000032326363636370A5A5201B133061
+              392D36745887A5A50000A5A5A5A5A5A5A5A5A5A5201634084E86382A8885A5A5
+              0000A5A5A5A5A5A5A5A5A5A5A5922559722E249BA5A5A5A50000A5A5A5A5A5A5
+              A5A5A5A5A5A5A5A5A5A5A5A5A5A5A5A50000A5A5A5A5A5A5A5A5A5A5A5A5A5A5
+              A5A5A5A5A5A5A5A50000}
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            OnClick = bt_exportClick
+          end
+        end
+      end
+      object GroupBox6: TGroupBox
+        Left = 0
+        Top = 256
+        Width = 784
+        Height = 238
+        Align = alBottom
+        Caption = 'Usu'#225'rios Autorizados:'
+        TabOrder = 1
+        object Label7: TLabel
+          Left = 2
+          Top = 223
+          Width = 240
+          Height = 13
+          Align = alBottom
+          Caption = 'OBS.: Em vermelho n'#227'o participou da Confer'#234'ncia.'
+        end
+        object DBGrid3_usr: TDBGrid
+          Left = 2
+          Top = 15
+          Width = 780
+          Height = 208
+          Hint = 'Duplo clique para incluir m'#243'dulo'
+          Align = alClient
+          Color = clWhite
+          FixedColor = 15066597
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Verdana'
+          Font.Style = []
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clBlack
+          TitleFont.Height = -9
+          TitleFont.Name = 'Verdana'
+          TitleFont.Style = []
+          OnDrawColumnCell = DBGrid3_usrDrawColumnCell
+        end
+      end
+      object GroupBox10: TGroupBox
+        Left = 0
+        Top = 49
+        Width = 784
+        Height = 201
+        Align = alClient
+        Caption = 'Lista de Confer'#234'ncias:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -9
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 2
+        object Splitter6: TSplitter
+          Left = 594
+          Top = 15
+          Height = 184
+          Align = alRight
+        end
+        object DBGrid3: TDBGrid
+          Left = 2
+          Top = 15
+          Width = 592
+          Height = 184
+          Hint = 'Duplo clique para incluir m'#243'dulo'
+          Align = alClient
+          Color = clWhite
+          FixedColor = 15066597
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Verdana'
+          Font.Style = []
+          Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clBlack
+          TitleFont.Height = -9
+          TitleFont.Name = 'Verdana'
+          TitleFont.Style = []
+          OnCellClick = DBGrid3CellClick
+          OnKeyDown = DBGrid3KeyDown
+          OnKeyUp = DBGrid3KeyUp
+        end
+        object DBMemo3: TDBMemo
+          Left = 597
+          Top = 15
+          Width = 185
+          Height = 184
+          TabStop = False
+          Align = alRight
+          BevelOuter = bvNone
+          BorderStyle = bsNone
+          Color = 16119285
+          ReadOnly = True
+          ScrollBars = ssVertical
+          TabOrder = 1
+        end
+      end
+    end
+    object TabSheet4: TTabSheet
+      Caption = 'Ficha cadastral da Confer'#234'ncia'
+      object GroupBox3: TGroupBox
+        Left = 0
+        Top = 0
+        Width = 321
+        Height = 448
+        Align = alLeft
+        Caption = 'Ficha de cadastro da Confer'#234'ncia:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -9
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        object cl_cod: TLabel
+          Left = 305
+          Top = 0
+          Width = 6
+          Height = 13
+          Alignment = taRightJustify
+          Caption = '0'
+        end
+        object ScrollBox1: TScrollBox
+          Left = 2
+          Top = 15
+          Width = 314
+          Height = 431
+          Align = alLeft
+          BevelInner = bvNone
+          BevelOuter = bvNone
+          BorderStyle = bsNone
+          TabOrder = 0
+          object Panel2: TPanel
+            Left = -1
+            Top = 0
+            Width = 310
+            Height = 427
+            BevelOuter = bvNone
+            Color = 16119285
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -9
+            Font.Name = 'Verdana'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+            object Label1: TLabel
+              Left = 14
+              Top = 143
+              Width = 49
+              Height = 12
+              Caption = 'Ativa'#231#227'o:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -9
+              Font.Name = 'Verdana'
+              Font.Style = [fsBold, fsUnderline]
+              ParentFont = False
+            end
+            object Label2: TLabel
+              Left = 31
+              Top = 197
+              Width = 28
+              Height = 12
+              Caption = 'Data:'
+              Enabled = False
+            end
+            object Label4: TLabel
+              Left = 189
+              Top = 197
+              Width = 28
+              Height = 12
+              Caption = 'Hora:'
+              Enabled = False
+            end
+            object Label3: TLabel
+              Left = 15
+              Top = 40
+              Width = 55
+              Height = 12
+              Caption = 'Descri'#231#227'o:'
+            end
+            object Label5: TLabel
+              Left = 14
+              Top = 265
+              Width = 55
+              Height = 12
+              Caption = 'Seguran'#231'a:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -9
+              Font.Name = 'Verdana'
+              Font.Style = [fsBold, fsUnderline]
+              ParentFont = False
+            end
+            object lbcp2: TLabeledEdit
+              Left = 14
+              Top = 18
+              Width = 291
+              Height = 20
+              EditLabel.Width = 32
+              EditLabel.Height = 12
+              EditLabel.Caption = 'Tema:'
+              MaxLength = 255
+              TabOrder = 0
+            end
+            object lbcp4: TRadioButton
+              Left = 14
+              Top = 159
+              Width = 79
+              Height = 17
+              Caption = 'Imediata'
+              Checked = True
+              TabOrder = 1
+              TabStop = True
+              OnClick = lbcp4Click
+            end
+            object lbcp5: TRadioButton
+              Left = 14
+              Top = 175
+              Width = 135
+              Height = 17
+              Caption = 'Agendar Confer'#234'ncia:'
+              TabOrder = 2
+              OnClick = lbcp5Click
+            end
+            object lbcp6_date: TDateTimePicker
+              Left = 62
+              Top = 194
+              Width = 123
+              Height = 20
+              Date = 39582.213170567130000000
+              Time = 39582.213170567130000000
+              Enabled = False
+              TabOrder = 3
+            end
+            object lbcp6_time: TDateTimePicker
+              Left = 220
+              Top = 194
+              Width = 87
+              Height = 20
+              Date = 39582.213170567130000000
+              Time = 39582.213170567130000000
+              Enabled = False
+              Kind = dtkTime
+              TabOrder = 4
+            end
+            object lbcp12: TCheckBox
+              Left = 14
+              Top = 282
+              Width = 249
+              Height = 18
+              Caption = 'Utilizar senha para acesso a Confer'#234'ncia:'
+              TabOrder = 8
+              OnClick = lbcp12Click
+            end
+            object lbcp13: TLabeledEdit
+              Left = 31
+              Top = 312
+              Width = 272
+              Height = 20
+              EditLabel.Width = 199
+              EditLabel.Height = 12
+              EditLabel.Caption = 'Senha alphan'#250'merica (4 '#224' 255 dig'#237'tos):'
+              Enabled = False
+              MaxLength = 255
+              PasswordChar = '#'
+              TabOrder = 9
+              OnChange = lbcp13Change
+            end
+            object lbcp14: TCheckBox
+              Left = 14
+              Top = 337
+              Width = 145
+              Height = 18
+              Caption = 'Compactar mensagens'
+              TabOrder = 10
+            end
+            object lbcp15: TCheckBox
+              Left = 14
+              Top = 354
+              Width = 291
+              Height = 18
+              Caption = 'Permitir acesso ao Hist'#243'rico a todos os Moderadores'
+              Checked = True
+              State = cbChecked
+              TabOrder = 11
+            end
+            object lbcp17: TCheckBox
+              Left = 14
+              Top = 388
+              Width = 217
+              Height = 18
+              Caption = 'Permitir convites a outros Moderadores'
+              Checked = True
+              State = cbChecked
+              TabOrder = 13
+            end
+            object lbcp9: TCheckBox
+              Left = 14
+              Top = 223
+              Width = 123
+              Height = 16
+              Caption = 'Fechar se'#231#227'o ap'#243's'
+              Checked = True
+              State = cbChecked
+              TabOrder = 5
+              OnClick = lbcp9Click
+            end
+            object lbcp10: TDateTimePicker
+              Left = 138
+              Top = 222
+              Width = 92
+              Height = 20
+              Date = 39582.041666666660000000
+              Time = 39582.041666666660000000
+              Kind = dtkTime
+              TabOrder = 6
+            end
+            object lbcp16: TCheckBox
+              Left = 14
+              Top = 370
+              Width = 227
+              Height = 18
+              Caption = 'Permitir edi'#231#227'o somente ao seu Usu'#225'rio'
+              Checked = True
+              State = cbChecked
+              TabOrder = 12
+            end
+            object lbcp11: TCheckBox
+              Left = 14
+              Top = 242
+              Width = 227
+              Height = 16
+              Caption = 'Fechar se'#231#227'o automaticamente ao sair'
+              Checked = True
+              State = cbChecked
+              TabOrder = 7
+            end
+            object lbcp18: TCheckBox
+              Left = 14
+              Top = 404
+              Width = 217
+              Height = 18
+              Caption = 'Permitir convites a usu'#225'rios Web'
+              TabOrder = 14
+            end
+            object lbcp3: TMemo
+              Left = 15
+              Top = 56
+              Width = 289
+              Height = 81
+              TabOrder = 15
+            end
+          end
+        end
+      end
+      object GroupBox7: TGroupBox
+        Left = 321
+        Top = 0
+        Width = 463
+        Height = 448
+        Align = alClient
+        Caption = 'Selecione os Usu'#225'rios Autorizados para a Confer'#234'ncia:'
+        Color = 15461355
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -9
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 1
+        object StatusBar3: TStatusBar
+          Left = 2
+          Top = 427
+          Width = 459
+          Height = 19
+          Panels = <
+            item
+              Width = 50
+            end>
+          ParentColor = True
+        end
+        object ToolBar7: TToolBar
+          Left = 2
+          Top = 15
+          Width = 459
+          Height = 46
+          ButtonHeight = 38
+          Caption = 'ToolBar1'
+          EdgeBorders = []
+          TabOrder = 1
+          object SpeedButton1: TSpeedButton
+            Left = 0
+            Top = 2
+            Width = 225
+            Height = 38
+            Hint = 'Selecionar todos os usu'#225'rios'
+            Caption = 'Selecionar todos'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Verdana'
+            Font.Style = []
+            Glyph.Data = {
+              16010000424D160100000000000046000000280000000D0000000D0000000100
+              080000000000D0000000120B0000120B00000400000000000000FFFFFF00BFBF
+              BF007F7F7F000000000000000000000000000000000000000000020101010101
+              0101010101010000000002030000000000000000000100000000020300000003
+              0000000000010000000002030000030303000000000100000000020300030303
+              0303000000010000000002030003030003030300000100000000020300030000
+              0003030300010000000002030000000000000303000100000000020300000000
+              0000000300010000000002030000000000000000000100000000020303030303
+              0303030303010000000002020202020202020202020200000000}
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            OnClick = SpeedButton1Click
+          end
+          object SpeedButton2: TSpeedButton
+            Left = 225
+            Top = 2
+            Width = 225
+            Height = 38
+            Hint = 'Deselecionar todos os usu'#225'rios'
+            Caption = 'Deselecionar todos'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Verdana'
+            Font.Style = []
+            Glyph.Data = {
+              3E020000424D3E0200000000000036000000280000000D0000000D0000000100
+              18000000000008020000120B0000120B00000000000000000000FFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FF00808085A2A2A6BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF
+              BFBFBFBDBDC0FBFBFF007B7B7B00000D0101FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFF0000FFBFBFBFFFFFFF007F7F7F000000FFFFFF0000FFFFFF
+              FF929292FFFFFFFFFFFFFFFFFF0000FFFFFFFFBFBFBFFFFFFF007F7F7F000000
+              FFFFFFFFFFFF0000FF929292929292FFFFFF0000FFFFFFFFFFFFFFBFBFBFFFFF
+              FF007F7F7F000000FFFFFF9292929292920000FF9292920000FFFFFFFFFFFFFF
+              FFFFFFBFBFBFFFFFFF007F7F7F000000FFFFFF929292929292FFFFFF0000FF92
+              9292929292FFFFFFFFFFFFBFBFBFFFFFFF007F7F7F000000FFFFFF929292FFFF
+              FF0000FFFFFFFF0000FF929292929292FFFFFFBFBFBFFFFFFF007F7F7F000000
+              FFFFFFFFFFFF0000FFFFFFFFFFFFFFFFFFFF0000FF929292FFFFFFBFBFBFFFFF
+              FF007F7F7F000000FFFFFF0000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000FF
+              FFFFFFBFBFBFFFFFFF007F7F7F0000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFF0000FFBFBFBFFFFFFF007F7F7F00000F0000070000000000
+              00000000000000000000000000000000000000B4B4C3FDFDFF007F7F7F7B7B83
+              7E7E7E7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7FF7F7
+              FD00}
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            OnClick = SpeedButton2Click
+          end
+        end
+        object listUsrCheck: TRxCheckListBox
+          Left = 2
+          Top = 61
+          Width = 459
+          Height = 366
+          CheckKind = ckCheckMarks
+          Align = alClient
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Verdana'
+          Font.Style = []
+          GraySelection = True
+          ItemHeight = 18
+          ParentFont = False
+          TabOrder = 2
+          InternalVersion = 202
+        end
+      end
+      object ToolBar6: TToolBar
+        Left = 0
+        Top = 448
+        Width = 784
+        Height = 46
+        Align = alBottom
+        ButtonHeight = 38
+        Caption = 'ToolBar1'
+        TabOrder = 2
+        object bt_del: TSpeedButton
+          Left = 0
+          Top = 2
+          Width = 189
+          Height = 38
+          Hint = 'Excluir confer'#234'ncia selecionada'
+          Caption = 'Excluir Confer'#234'ncia'
+          Flat = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Verdana'
+          Font.Style = []
+          Glyph.Data = {
+            56010000424D5601000000000000560000002800000010000000100000000100
+            08000000000000010000120B0000120B00000800000000000000FFFFFF0000FF
+            FF000000FF000000990000000000FFFFFF000000000000000000000000000000
+            0000000000000000000000020004040404040404040404040202000202040100
+            0100010001000102020000000202000100010001000102030000000000030200
+            0100010001020204000000000004020200010001020201040000000000040102
+            0200010202010004000000000004000102020202010001040000000000040100
+            0102020200010004000000000004000100020202020001040000000000040100
+            0202010002020004000000000004000202010001040202040000000000040202
+            0100010004010203000000000003020100010001040404020200000002020404
+            0404040404040000020200020200000000000000000000000002}
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          OnClick = bt_delClick
+        end
+        object bt_finale: TSpeedButton
+          Left = 189
+          Top = 2
+          Width = 189
+          Height = 38
+          Hint = 'Finalizar confer'#234'ncia selecionada'
+          Caption = 'Finalizar Confer'#234'ncia'
+          Flat = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Verdana'
+          Font.Style = []
+          Glyph.Data = {
+            26010000424D260100000000000046000000280000000E0000000E0000000100
+            080000000000E0000000120B0000120B000004000000000000000000000000FF
+            FF00FFFFFF000201FE0002020202020000000002020202020000020202000001
+            0201020000020202000002020002010201020102010002020000020002010201
+            0000020102010002000002000102010200000102010200020000000102010201
+            0201020102010200000000020102010200000102010201000000000102010201
+            0000020102010200000000020102010200000102010201000000020002010201
+            0000020102010002000002000102010200000102010200020000020200010201
+            0201020102000202000002020200000201020100000202020000020202020200
+            00000002020202020000}
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          OnClick = bt_finaleClick
+        end
+        object SpeedButton4: TSpeedButton
+          Left = 378
+          Top = 2
+          Width = 168
+          Height = 38
+          Hint = 'Voltar para janela anterior'
+          Caption = 'Cancelar edi'#231#227'o'
+          Flat = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Verdana'
+          Font.Style = []
+          Glyph.Data = {
+            9E020000424D9E02000000000000360100002800000012000000120000000100
+            08000000000068010000120B0000120B0000400000000000000012148A0000FF
+            0000999999003130E4002E2CC5008485F3005B5BEF004240ED002326DF009495
+            F7006865F1003C3CCE005354F80017128B003B3BE7007976FB007372F7006668
+            F6003C3CEE00151587003333CC009B9DF5008588F100494AEE006869F7001115
+            8B003A42E6005D5FF3003F3ECA008D8FF50017158C002826DE003131C3009599
+            F8004447EF006866F5009999FF00FFFFFF000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000252525252525
+            2525252525252525252525250000252525252525252525252525252525252525
+            00002525252502132525252525250200252525250000252525021E101F252525
+            250213180425252500002525021910081F032525020D230E0920252500002525
+            250213061F0303021311120920252525000025252525021306030E0011120920
+            252525250000252525252502131B0E0E071D2025252525250000252525252525
+            02001112072025252525252500002525252525021E11120A2222142525252525
+            000025252525021E110E05141017170B2525252500002525250200110E052002
+            00100C0C0B252525000025250219100E1604252502130F0C210B252500002525
+            25021E1520252525250213211C252525000025252525021E2525252525250219
+            2525252500002525252525252525252525252525252525250000252525252525
+            2525252525252525252525250000252525252525252525252525252525252525
+            0000}
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          OnClick = SpeedButton4Click
+        end
+        object SpeedButton3: TSpeedButton
+          Left = 546
+          Top = 2
+          Width = 233
+          Height = 38
+          Hint = 'Gravar lista de Usu'#225'rios Autorizados'
+          Caption = 'Gravar Dados'
+          Flat = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Verdana'
+          Font.Style = [fsBold]
+          Glyph.Data = {
+            1E020000424D1E02000000000000B60000002800000014000000120000000100
+            08000000000068010000120B0000120B00002000000000000000FFFFFF00FFF9
+            EC00EDEDED00F7ECD800F2E7D300F0E4D000EBD8B600D9C8AB00C7B49200C2AF
+            8D00BFAC8A00BAA78500B7A48200B4A17F0099999900AF9C7A00A18E6C008673
+            5100A06C4800806D4B006D5A38006E502F005C4927004E392100140D0000FFFF
+            FF00000000000000000000000000000000000000000000000000191919191919
+            1919191919191919191919191919191919191919190E0E0E0E0E0E0E0E0E0E0E
+            0E191919191919191217171515151515151717170E19191919191919120B0F00
+            0202020202160C170E19191919191919120B0F00130A000202160C170E191919
+            190E0E0E120A0D001413000202160C170E1919191217171512090D0000000000
+            00160C170E191919120B0F001208080C0C0C0C0C0C0C0C170E191919120B0F00
+            120801030303030405110C170E191919120A0D00120801030303030405110717
+            0E19191912090D001208010303030304051810170E1919191208080C12060101
+            0101010101140B170E1919191208010312121212121212121212121219191919
+            1208010303030304051107170E19191919191919120801030303030405181017
+            0E19191919191919120601010101010101140B170E1919191919191912121212
+            1212121212121212191919191919191919191919191919191919191919191919
+            1919}
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          OnClick = SpeedButton3Click
+        end
+      end
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 525
+    Width = 792
+    Height = 19
+    Panels = <
+      item
+        Width = 50
+      end>
+    ParentColor = True
+  end
+  object ApplicationEvents1: TApplicationEvents
+    OnException = ApplicationEvents1Exception
+    Left = 105
+    Top = 208
+  end
+end

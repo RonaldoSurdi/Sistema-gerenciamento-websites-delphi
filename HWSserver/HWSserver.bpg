@@ -1,0 +1,164 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = HWSwebServer.exe HWSfuncoes.exe HWSadmniveis.exe HWSramosatv.exe \
+  HWSwebsites.exe HWSestados.exe HWSlanguagens.exe HWSusradm.exe HWSadmmod.exe \
+  HWSstset.exe HWSsetores.exe HWSst.exe HWSskmod.exe HWSstChat.exe HWSstusr.exe \
+  HWSadmest.exe HWSclilogs.exe HWSserverconfig.exe HWSskins.exe HWSusrweb.exe \
+  HWSentidades.exe HWSadmlogs.exe HWSxml.exe HWSstatv.exe HWSmodules.exe \
+  HWStradutor.exe HWSstapl.exe HWSadmcustomHelp.exe HWSmoedas.exe \
+  HWShelpServer.exe HWScustomHelp.exe HWSwebserverInstaller.exe uninstall.exe \
+  HWSonline.exe HWShelp.exe HWScontador.exe HWSvlrModaux.exe HWSvlrModadm.exe \
+  HWSvlrModcli.exe HWSusrpass.exe HWSlstcampos.exe HWSadmpass.exe HWScidades.exe \
+  HWSphotogalerycfgDivulg.exe HWSphotogalerycfg.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+Uninstall.exe: uninstall\Uninstall.dpr
+  $(DCC)
+
+HWSwebServer.exe: source\HWSwebServer.dpr
+  $(DCC)
+
+HWSfuncoes.exe: source\HWSfuncoes.dpr
+  $(DCC)
+
+HWSadmniveis.exe: source\HWSadmniveis.dpr
+  $(DCC)
+
+HWSramosatv.exe: source\HWSramosatv.dpr
+  $(DCC)
+
+HWSwebsites.exe: source\HWSwebsites.dpr
+  $(DCC)
+
+HWSestados.exe: source\HWSestados.dpr
+  $(DCC)
+
+HWSlanguagens.exe: source\HWSlanguagens.dpr
+  $(DCC)
+
+HWSusradm.exe: source\HWSusradm.dpr
+  $(DCC)
+
+HWSadmmod.exe: source\HWSadmmod.dpr
+  $(DCC)
+
+HWSstset.exe: source\HWSstset.dpr
+  $(DCC)
+
+HWSsetores.exe: source\HWSsetores.dpr
+  $(DCC)
+
+HWSst.exe: source\HWSst.dpr
+  $(DCC)
+
+HWSskmod.exe: source\HWSskmod.dpr
+  $(DCC)
+
+HWSstChat.exe: source\HWSstChat.dpr
+  $(DCC)
+
+HWSstusr.exe: source\HWSstusr.dpr
+  $(DCC)
+
+HWSadmest.exe: source\HWSadmest.dpr
+  $(DCC)
+
+HWSclilogs.exe: source\HWSclilogs.dpr
+  $(DCC)
+
+HWSserverconfig.exe: source\HWSserverconfig.dpr
+  $(DCC)
+
+HWSskins.exe: source\HWSskins.dpr
+  $(DCC)
+
+HWSusrweb.exe: source\HWSusrweb.dpr
+  $(DCC)
+
+HWSentidades.exe: source\HWSentidades.dpr
+  $(DCC)
+
+HWSadmlogs.exe: source\HWSadmlogs.dpr
+  $(DCC)
+
+HWSxml.exe: source\HWSxml.dpr
+  $(DCC)
+
+HWSstatv.exe: source\HWSstatv.dpr
+  $(DCC)
+
+HWSmodules.exe: source\HWSmodules.dpr
+  $(DCC)
+
+HWStradutor.exe: source\HWStradutor.dpr
+  $(DCC)
+
+HWSstapl.exe: source\HWSstapl.dpr
+  $(DCC)
+
+HWSadmcustomHelp.exe: source\HWSadmcustomHelp.dpr
+  $(DCC)
+
+HWSmoedas.exe: source\HWSmoedas.dpr
+  $(DCC)
+
+HWShelpServer.exe: source\HWShelpServer.dpr
+  $(DCC)
+
+HWScustomHelp.exe: source\HWScustomHelp.dpr
+  $(DCC)
+
+HWSwebserverInstaller.exe: Install\HWSwebserverInstaller.dpr
+  $(DCC)
+
+uninstall.exe: uninstall\uninstall.dpr
+  $(DCC)
+
+HWSonline.exe: source\HWSonline.dpr
+  $(DCC)
+
+HWShelp.exe: source\HWShelp.dpr
+  $(DCC)
+
+HWScontador.exe: source\HWScontador.dpr
+  $(DCC)
+
+HWSvlrModaux.exe: source\HWSvlrModaux.dpr
+  $(DCC)
+
+HWSvlrModadm.exe: source\HWSvlrModadm.dpr
+  $(DCC)
+
+HWSvlrModcli.exe: source\HWSvlrModcli.dpr
+  $(DCC)
+
+HWSusrpass.exe: source\HWSusrpass.dpr
+  $(DCC)
+
+HWSlstcampos.exe: source\HWSlstcampos.dpr
+  $(DCC)
+
+HWSadmpass.exe: source\HWSadmpass.dpr
+  $(DCC)
+
+HWScidades.exe: source\HWScidades.dpr
+  $(DCC)
+
+HWSphotogalerycfgDivulg.exe: source\HWSphotogalerycfgDivulg.dpr
+  $(DCC)
+
+HWSphotogalerycfg.exe: source\HWSphotogalerycfg.dpr
+  $(DCC)
+
+

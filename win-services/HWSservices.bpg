@@ -1,0 +1,39 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = HWSmail.exe HWSsrv.exe HWSftp.exe HWSftpAdmin.exe HWServer.exe \
+  HWSfileServer.exe HWSfileServerC.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+HWSmail.exe: HWSmail\HWSmail.dpr
+  $(DCC)
+
+HWSsrv.exe: HWSsrv\HWSsrv.dpr
+  $(DCC)
+
+HWSftp.exe: HWSftp\HWSftp.dpr
+  $(DCC)
+
+HWSftpAdmin.exe: HWSftpAdmin\HWSftpAdmin.dpr
+  $(DCC)
+
+HWServer.exe: HWSftpantigo\HWServer.dpr
+  $(DCC)
+
+HWSfileServer.exe: HWSfileServer\HWSfileServer.dpr
+  $(DCC)
+
+HWSfileServerC.exe: HWSfileServerC\HWSfileServerC.dpr
+  $(DCC)
+
+

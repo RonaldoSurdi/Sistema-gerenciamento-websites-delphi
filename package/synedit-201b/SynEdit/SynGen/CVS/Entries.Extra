@@ -1,0 +1,7 @@
+/.cvsignore////*///
+/GenLex.pas////*///
+/Highlighters-HowTo.html////*///
+/LongIntList.pas////*///
+/SynGen.dpr////*///
+/SynGenUnit.dfm////*///
+/SynGenUnit.pas////*///

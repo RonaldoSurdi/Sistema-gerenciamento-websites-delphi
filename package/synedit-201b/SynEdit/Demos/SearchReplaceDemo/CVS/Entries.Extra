@@ -1,0 +1,12 @@
+/.cvsignore////*///
+/ReadMe.txt////*///
+/SearchReplaceDemo.dpr////*///
+/TBMain.bmp////*///
+/dlgConfirmReplace.dfm////*///
+/dlgConfirmReplace.pas////*///
+/dlgReplaceText.dfm////*///
+/dlgReplaceText.pas////*///
+/dlgSearchText.dfm////*///
+/dlgSearchText.pas////*///
+/frmMain.dfm////*///
+/frmMain.pas////*///

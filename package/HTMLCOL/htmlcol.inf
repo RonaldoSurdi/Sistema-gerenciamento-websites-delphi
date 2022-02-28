@@ -1,0 +1,31 @@
+[DSP upload]
+Filename=htmlcol.zip
+Replacements=
+Version=1.00
+FileURL=http://www.hharvey.mtx.net/Win95App.html#htmlcol
+Description=Displays the "pure" HTML colour swatch and has ability to select both foreground and background colours on the same dialog box in one operation.
+Delphi 1.0=N
+Delphi 2.0=N
+Delphi 3.0=Y
+Delphi 4.0=N
+C++Builder 1.0=N
+File Status=Freeware
+Full Source=Included
+Category=Visible Components
+Note=
+Additional info=
+
+[DSP Support]
+DSP Support=Y
+
+[Versions available]
+Delphi 1.0=
+Delphi 2.0=
+Delphi 3.0=
+Delphi 4.0=
+C++Builder 1.0=
+
+[Uploader]
+Author name=Howard Harvey
+Author E-mail=hharvey@dove.net.au
+Author URL=http://dove.net.au/~hharvey

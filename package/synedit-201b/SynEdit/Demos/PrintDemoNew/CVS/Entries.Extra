@@ -1,0 +1,9 @@
+/.cvsignore////*///
+/DPageSetup.dfm////*///
+/DPageSetup.pas////*///
+/DTestPrintPreview.dfm////*///
+/DTestPrintPreview.pas////*///
+/MTestPP.dfm////*///
+/MTestPP.pas////*///
+/ReadMe.txt////*///
+/TestPP.dpr////*///

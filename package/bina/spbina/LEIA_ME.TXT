@@ -1,0 +1,358 @@
+spBina 1.02 (versão corrigida)
+Componente para programa de BINA DTMF em Delphi (3,4 e5), usando apenas o modem.
+
+Sistema de acesso: Usando a API de Comunicação do Windows
+	 Hardware: Modem com suporte para a Classe 8 ou Classe 80.
+       Plataforma: Windows 98, NT, 2000	  
+********************************************************************************
+
+spbina102.zip:
+NESTE PACOTE CONTÉM:
+- COMPONENTE spBina 1.02, FREE COM FONTES. 
+- EXEMPLO EXECUTÁVEL, FREE COM FONTES.
+
+arquivos principais:
+- spBina.htm (ilustrações)
+- spBina.pas (componenente, versão 1 corrigida(1.02)
+- spBinaSetup.pas (Tela de Setup)
+- MainForm.pas (Tela principal do exemplo)
+- Exemplo2.dpr (Projeto do exemplo)
+- ComandAT.INI (Arquivo configuração)
+- Envia_me.txt (Arquivo de retorno ao autor)
+- Leia_me.txt   (Este arquivo)
+- Exemplo2Bina.exe (executável)
+
+
+
+- Idealizador:
+	Valdomiro Emídio da Silva.
+	Sibel Eletrônica Rio Preto Ltda.
+	Rua São Sebastião, 71.
+	15102-000 - São José do Rio Preto -SP.
+	Distrito: Talhado.
+	Fones:	DDD (17)
+		239-6171 
+		3829-6442
+		9702-4093
+
+	e-mail: valdomiro.silva@terra.com.br
+		spj126391@terra.com.br
+
+-Baseado no Componente:
+	Cport, de Djan Crnilla.
+
+***********************************************************************************************
+************************************
+IMPORTANTE!	COMANDOS AT 	   *
+************************************
+
+	- TENHA sempre em mente que:
+		O SuperBina irá procurar a configuração dos comandos AT
+		no arquivo ComandAT.INI, na chave: [COMANDOS_0].
+		Por isso, coloque nesta chave, os comandos que o seu
+		modem aceitou. Exemplo:
+			- Seu modem aceiou os comandos
+			  contidos na chave: [COMANDOS_1],
+			  então, copie estes comandos (cmdAT_) para
+			  a chave [COMANDOS_0].
+
+	- COMANDOS AT Estendido:
+		Quase todos os comandos AT usados na inicialização do
+		spBina, são comuns à grande maioria dos modems. Porém,
+		o comando de escolha de classes (FCLASS), trata-se de
+		um comando ESTENDIDO, e, dependendo do modem, a
+		forma com que este comando é inserido pode variar.
+		Abaixo, alguns cuidados a serem tomados:
+
+		- O comando "+FCLASS=8" não poderá estar numa linha de 
+		  comando que contenha um Reset (AT&F);
+		- Ele deverá ser o útimo ítem de uma linha de comando, mas evite
+		  colocá-lo numa linha sozinho. 
+		- Se o mesmo retornar 'ERROR', substitua-o por um de seus
+		  equivalentes: #CLS=8 ou +CLS=8 ou +FCLASS=80.
+
+	- ATDT000
+		- O Comando ATDT000, solicita que o modem faça uma discagem (000).
+		  Imediatamente após este comando, o modem deverá emitir um tom de
+		  discagem, caso contrário, o spBina não ativou.
+		  A resposta a este comando poderá ser VCON; CONNECT, e as vezes,
+		  nenhuma resposta é enviada. Mas se o tom da discagem foi emitido,
+		  tudo normal.
+
+	- X3 (Comando)
+		- O comando 'X3', além da função de retorno de respostas, instrui o modem 
+		  a fazer uma 'discagem cega', ou seja, o modem não aguardará o tom de 
+		  discar (caso contrário, retornaria a  mensagem: 'NO DIALTONE'.
+
+	- ATI (Comandos ati)
+		- A função dos comandos ATI são de retornar respostas às solicitações
+		  na limha de comando. Geralmente, vão de 1 até 7 (ATI1...ATI7).
+		  Alguns modems não aceitam o formato da pergunta: ATI1=?, devendo ser
+		  experimentados outros formatos, exemplo: ATI1;   ATI1? ou ATI1=
+		
+		  ...
+
+
+	- CARACTERES TRUNCADOS
+		- Na tela de teste de DTMF Local, em modems Motorola, os caracteres
+		  das teclas digitadas poderão aparecer truncados, exemplo:
+			~/1
+			~/2
+			...
+		- Mas isto é fácil de se resolver, quando você for montar um aplicativo,
+		  filtre estes caracteres, pois os mesmos vem em blocos: 
+
+		  exemplo:
+                  var
+	  	  i: integer;
+		  saida : string;
+
+		  for i := 1 to length(texto) do // texto a ser verificado
+		      if texto[i] in ['0'..'9'] then
+			 saida := texto[i];			
+
+                  A 'saida' conterá apenas os dígitos válidos.
+
+
+********************************************************************************************
+(0) - O ADAPTADOR           *	
+*****************************
+
+	Para que o SuperBina detecte chamadas telefônicas, além de sua linha estar
+	habilitada para receber TONS DE BINA, você deverá colocar um simples 
+	adaptador na sua linha:
+
+	- O adaptador nada mais é do que uma resistência de baixo custo (menos que 1 real),
+	  que você pode adquirir em casas de componentes eletrônicos.
+
+	Especificações do Resistor:
+	- 3k9 x 5 Watts ( 3.900 Hons). Outros valores acima também podem ser 
+	experimentados, desde de que, não ultrapasse de 6k8 (6.800 Hons).
+	- A Watagem também pode ser menos, à apartir de 1 Watts, serve.
+
+COMO COLOCAR:
+	Na tomada, antes de entrar no modem, corte apenas um dos fios da rede telefônica 
+	(qualquer um). E, como se fosse uma EMENDA, SOLDE o resistor:
+
+
+	exemplo:  ___________x....x_________         corte nos 'x' e faça e emenda
+	REDE	  __________________________ MODEM
+
+	Abra o arquivo spBina.htm para poder visualizar melhor!
+
+
+EXTENSÃO:
+	A extensão NÃO deverá sair da tomada do MODEM, e sim ANTES do resistor. Senão seu
+	telefone (extensão) ficará mudo.
+
+FUNÇÃO DO RESISTOR:
+	- Sua função é não deixar que haja tom de linha, pois o spBina funcionará como
+	  se estivesse-mos tirado o fone do gancho, logo, se existir tom de linha, seu
+	  telefone ficará 'Ocupado'.
+
+	- Com a simulação de 'Fora do Gancho', podemos monitorar qualquer evento na
+	  linha telefônica. E, como o sistema BINA funciona ao inverso do Caller ID,
+	  (Caller ID envia os sinais depois do 1º RING e o BINA envia antes do RING),
+	  Podemos detectar os sinais já que estamos 'simi-fora-do-gancho'.
+
+MEU MODEM TEM Caller ID !
+	- Só que nunca vai funcionar aquí no Brasil!...TODOS os modems atuais, funcionam
+	  mais ou menos assim: 
+
+	- Para ativar o DTR (Leitor de Dados do Terminal), é preciso um pulso de alta
+	  voltagem no RI, (Identificador de RING). Ao receber a alta
+	  voltagem produzida pelo Ring o modem 'acorda' e começa a leitura. Se o 
+	  Sistema BINA funcionasse como o sistema do Caller ID, tudo ficaria fácil, mas
+	  não. Então tudo o que temos de fazer é: 'Não deixar o modem dormir'! Mas, 
+	  também, não deixá-lo de todo  'acordado'! Por isso foi criado um meio-termo, 
+	  ou seja, nem dormindo, nem acordado. Ele está fora do gancho, mas o resistor
+	  não deixa que ele perceba o tom de linha. 
+
+USANDO TERMO TÉCNICO:
+	- Esta é a parte chata (se não quizer, não leia...não vai perder nada!)
+	
+	- Para que se estabeleça uma conecção entre a CPA (Central de Processamento Automático)
+	  e seu telefone, é preciso uma carga resistiva no final da linha (seu telefone).
+	  Esta carga, fica compreendida entre 300 Hons à 1.200 Hons (impedância).
+	  Mas, para que ouçamos qualquer ruído na linha, não precisamos, necessariamente,
+	  estarmos conectados, basta estarmos ligados à esta linha em baixa impedância resistiva.
+
+	- Vejamos: se somarmos a impedância resistiva, padrão, dos sistemas telefônicos, mais
+	  o nosso resistor, teremos uma impedância de, mais ou menos 5.000 Hons!
+	  Nesta faixa podemos, perfeitamente, ouvir os ruídos na linha telefônica, sem no
+	  entanto, estarmos, literalmente conectados. Esta é a tática usada pelos
+	  identificadores de chamda padrão. Como vêem, não criei nada! Apenas tive a
+	  idéia de fazer a mesma coisa com um modem, desde que, ele aceite a entrada de
+	  Tons DTMF. Isto é possível com os modernos modems inteligentes(?) que suportam
+	  a Classe 8 (Voice), ou a Classe 80 (Voice Wiew).
+	- Todos os modems fabricados à partir dos anos 70, são considerados 'Modems 
+	  Inteligentes', (embora tenho minhas dúvidas. Afinal, eles ainda continuam contando 
+	  só até 2, ou é 'zero', ou é 'um').
+*********************************************************************************************
+*****************************
+(1)  - 	Instalando o spBina.*
+*****************************
+	> Components...
+	> Install Components...
+	> Unit File Name --> ..\spBina\spBina.pas
+	> Package Name   --> a sua escolha
+	> OK
+
+	- No final da compilação, deverá surgir uma mensagem (no box do Debug), 
+	  mais ou menos assim: 'Warning: ConfigSetup.pas importado implicitamente'.
+	  Não se preocupe, é que o componente faz chamadas ao ConfigSetup, mas 
+	  preferí montá-lo fora da Classe. Assim, você poderá alterá-lo à
+	  vontade sem a necessidade de recompilar o componente.
+	- A palheta "Sibel" será criada com o componente spBina.
+
+*****************************
+(2) - Usando o Exemplo(.exe)*	
+*****************************	
+	- Se baixou com a opção 'Com exemplo executável', Rode o aplicativo: 
+	  ExemploBina2.exe, ou:
+	- Carregue o .DPR (..\spBina\ExemploBina2.dpr)
+	- Compile-o
+	- Rode-o
+
+	- NÃO ACIONE O BOTÃO: ATIVAR AINDA....
+	  Primeiro pressione o botão 'Setup', uma mensagem surgirá dizendo que 
+	  não foi possível abrir a porta de comunicação. Não tem problema (a menos
+	  que esteja dentro do Delphi...). Configure a porta e o DDD Local.	
+
+NESTE EXEMPLO:
+	- Não há banco de Dados, logo: não guardará; não pesquisará. Apenas um
+	  arquivo de configurações (.INI), irá guardar os resultados: do Setup;
+	  Porta; DDD Local e comandos AT Setados.
+	- Não pretendo montar nenhum aplicativo-teste neste sentido (dá muito trabalho! :)
+	   
+*****************************	
+(3)- Configurando           *
+*****************************
+	- Para configurar o spBina, pressione o botão 'Setup'. Irá dar uma
+	  mensagem de erro 'Impossível Abrir Porta de Comunicação'!
+	  Isto ocorrerá pelo fato de você ainda não ter definido a porta.
+	  Basta selecioná-la no Box 'Porta' e, também, selecione o seu DDD local
+	  sem o Zero. Nas próximas vezes em que ativar, o spBina será setado
+	  automaticamente.
+
+	- O Comando selecionado será o 'Comandos ATI', que irá procurar pelas
+	  características de seu modem. Pressione 'Iniciar'.
+	  ao término da execução dos comandos ATI, será apresentada, no box inferior,
+	  as especificações de seu Modem. 
+	- No quadro 'Classes' (FCLASS) deverá estar checado: Classe 8 ou Classe 80, dependendo da
+	  Classe que seu modem suporta. Se nenhuma das classes for suportada pelo seu modem,
+	  o SuperBina não funcionará.
+
+	- Para cada classe, existe uma forma de inserir  o comando +FCLASS:
+	- Exemplo:
+		Classe 8, o comando seria: #CLS=8, mas também pode variar: +CLS=8 ou +FCLASS=8
+		dependendo da marca e modelo do modem.
+		Classe 80, o comando seria +FCLASS=80 ou +CLS=80
+
+	- Uma gama de comandos pré-definidos foi eleborada, e você pode experimentá-los em seu
+	  modem. Depois, basta colocá-los na chave: [COMANDOS_0], no arquivo: ComandosAT.INI.
+
+	- Ao rodar o grupo de comandos ATI '[ATI]', será gravado no arquivo: ENVIA_ME.TXT, todas
+	  as respostas do seu modem, por favor, envie este arquivo para o e-mail que aparece
+	  dentro do arquivo. Suas definições irão para nossa lista de comandos, juntamente com
+	  as especificações de seu modem, assim, usuários que possuem um modem igual ao seu
+	  poderá configurar o spBina com sucesso.
+
+	- Ao finalizar os comandos ATI, o spBina irá, automaticamente, para o grupo de comandos
+	  COMANDOS_0. Pressione 'Iniciar', os comandos serão inseridos linha-a-linha. Neste
+	  momento, observe se alguma mensagem seja 'ERROR'. Se todos os comandos forem aceitos,
+	  (todas as respostas 'OK'), o spBina será ativado.
+
+	- Ainda dentro do da tela do setup, peça para alguém ligar para você. Se tudo correu bem,
+	  a chamada será identificada e será mostrada a pagina 'Teste Local'.	
+
+********************************************************
+(3) - Testando DTMF da tecla digitada (LOCAL E REMOTO) *	
+********************************************************
+
+        REMOTO:
+	- O spBina poderá identificar as teclas digitadas pelo seu interlocutor, desde que, sua
+	  placa de modem não seja OnBoard (não conseguí fazer funcionar numa que tenho, mas nas 	  outras, que são placas comuns, funcionou perfeitamente).
+
+	- Faça o seguinte:
+	(1) -	Check a opção: "Habilitar teste de detecção de DTMF da tecla digitada";
+	(2) -	Pressione 'Iniciar'.
+	(3) -	Após a mensagem 'Ativado... Aguardando Tecla..'. Peça para alguém ligar para o 	
+		seu número, assim que a chamada for detectada (não aparecerá a palavra RING e nem 
+		a campainha do telefone tocará, mas você poderá usar um arquivo Wave para
+		simular uma campainha). Atenda o telefone e peça para o seu interlocutor digitar 
+		algumas teclas, estas deverão aparecer no box.
+
+	- A Chamada (na opção teste) será identificada terá esta aparência:
+	
+	A = Caracter do DTMF Inicial.
+	1 = Tipo do Telefone: público;  comercial; residencial etc...
+	1 = DDD: seu DDD local, ou o DDD do telefone chamador.
+	7 = DDD: seu DDD local, ou o DDD do telefone chamador.
+	2 = Prefixo.
+	3 = Prefixo.
+	9 = Prefixo.
+	6 = Número do Telefone.
+	1 = Número do Telefone.
+	7 = Número do Telefone.
+	1 = Número do Telefone.
+	C = Caracter do DTMF Final.
+
+        Resultado formatado: 1 (17) 239-6171.
+	- Quando uma nova tecla for entrada, a formatação irá ficar confusa, mas funciona.
+	  O correto é dar uma clear no MaskEdit, mas é apenas para um teste. Baseie-se nisto
+	  para desenvolver seu sistema de detectção de teclas via fone!
+
+	LOCAL:
+	- Funciona da mesma forma que o REMOTO, basta retirar a EXTENSÃO(*) do gancho e discar os 
+	  números.
+	(*) A extensão deverá estar ligada ANTES do resistor, caso contrário não haverá tom de 
+	linha.
+
+*****************************	
+(3)- ATIVANDO NORMAL        *
+*****************************
+
+	- Depois de tudo configurado, basta pressionar o botão 'Ativar'.
+
+**********************************************************************************************
+
+CONSIDERAÇÕES FINAIS.
+
+	- Sua linha deverá estar habilitada para receber sinais de BINA DTMF;
+	- Seu Modem deverá suportar a classe 8 ou classe 80 (FCLASS (*))
+
+
+(*) FCLASS
+	Fclass 8  = Voice (suficiente para detectar tons DTMF)
+	FClass 80 = Voice Wiew (entre outras utilidades, podemos citar a detecção de tempo de 	
+		    silêncio, o que não é possível na classe 8. Muito útil para o uso como 
+		    secretária 	eletrônica, onde podemos configurar o o tempo de falta de Voz
+	            (tempo de silêncio)).
+
+****************************
+(4) Caller ID x BINA       *
+****************************
+	O tempo, e espaço, não são suficiente para se falar em Caller ID versus BINA. Visto que
+	este é um assunto que 'dá panos pra mangas'. Prometo que numa ocasião mais 
+	apropriada falaremos sobre este extenso (e polêmico) assunto. 
+	
+***********************************************************************************************
+
+	
+
+
+
+
+	
+
+
+
+    
+
+
+
+
+
+
+

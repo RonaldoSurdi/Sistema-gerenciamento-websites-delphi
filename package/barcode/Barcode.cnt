@@ -1,0 +1,18 @@
+:BASE Barcode.hlp
+:TITLE Barcode
+1 TBarcode=TBarcode
+1 Imprimindo no QuickReport=QuickReport
+1 Métodos
+2 BarcodeCopy=BarcodeCopy
+2 BarcodeCustomPrint=BarcodeCustomPrint
+2 BarcodePrint=BarcodePrint
+2 SaveBarcode=SaveBarcode
+1 Propriedades
+2 AutoWidth=AutoWidth
+2 BackgroundColor=BackgroundColor
+2 BarCaption=BarCaption
+2 BarcodeType=BarcodeType
+2 BarColor=BarColor
+2 Digits=Digits
+2 Font=Font
+2 RescaleEAN=RescaleEAN

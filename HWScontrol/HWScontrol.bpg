@@ -1,0 +1,206 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = HWScontrol.exe HWSwebsites.exe HWSst.exe HWSclilogs.exe \
+  HWScontrolConfig.exe HWSusrweb.exe HWSentidades.exe HWScontrolInstaller.exe \
+  uninstall.exe HWSonline.exe HWShelp.exe HWSusrpass.exe HWSlstcontatos.exe \
+  HWSuscnf.exe HWSguestbook.exe HWScontador.exe HWSphotogalery.exe HWSsurvey.exe \
+  HWSmultimedia.exe HWSlstsrv.exe HWSusrinst.exe HWSrichlist.exe HWSusrsac.exe \
+  HWSusrsort.exe HWSnews.exe HWSstChat.exe HWSmovtub.exe HWSfilemanager.exe \
+  HWSshows.exe HWSturn.exe HWSfindweb.exe HWSevents.exe HWSlstprj2.exe \
+  HWScontactlist.exe HWSstatgalery.exe HWSclassgalery.exe HWSlstprj.exe \
+  HWSusrcontact.exe HWSrichgalery.exe HWSdivulg.exe HWSlstnews.exe HWSusrsis.exe \
+  HWSdownhist.exe HWSrichnews.exe HWSrichestate.exe HWSusrwebsite.exe \
+  HWSusrassoc.exe HWSusrcentral.exe HWSrichmenu.exe HWSrichcatalog.exe \
+  HWSlstinst.exe HWSlstrich.exe HWSrichservices.exe HWSrichemp.exe HWSevents2.exe \
+  HWSrichdiscotxt.exe HWSrichnews2.exe HWSrichdisco.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+Uninstall.exe: uninstall\Uninstall.dpr
+  $(DCC)
+
+HWScontrol.exe: HWScontrol\source\HWScontrol.dpr
+  $(DCC)
+
+HWSwebsites.exe: HWScontrol\source\HWSwebsites.dpr
+  $(DCC)
+
+HWSst.exe: HWScontrol\source\HWSst.dpr
+  $(DCC)
+
+HWSclilogs.exe: HWScontrol\source\HWSclilogs.dpr
+  $(DCC)
+
+HWScontrolConfig.exe: HWScontrol\source\HWScontrolConfig.dpr
+  $(DCC)
+
+HWSusrweb.exe: HWScontrol\source\HWSusrweb.dpr
+  $(DCC)
+
+HWSentidades.exe: HWScontrol\source\HWSentidades.dpr
+  $(DCC)
+
+HWScontrolInstaller.exe: HWScontrol\Install\HWScontrolInstaller.dpr
+  $(DCC)
+
+uninstall.exe: HWScontrol\uninstall\uninstall.dpr
+  $(DCC)
+
+HWSonline.exe: HWScontrol\source\HWSonline.dpr
+  $(DCC)
+
+HWShelp.exe: HWScontrol\source\HWShelp.dpr
+  $(DCC)
+
+HWSusrpass.exe: HWScontrol\source\HWSusrpass.dpr
+  $(DCC)
+
+HWSlstcontatos.exe: HWScontrol\source\HWSlstcontatos.dpr
+  $(DCC)
+
+HWSuscnf.exe: HWScontrol\source\HWSuscnf.dpr
+  $(DCC)
+
+HWSguestbook.exe: HWScontrol\source\HWSguestbook.dpr
+  $(DCC)
+
+HWScontador.exe: HWScontrol\source\HWScontador.dpr
+  $(DCC)
+
+HWSphotogalery.exe: HWScontrol\source\HWSphotogalery.dpr
+  $(DCC)
+
+HWSsurvey.exe: HWScontrol\source\HWSsurvey.dpr
+  $(DCC)
+
+HWSmultimedia.exe: HWScontrol\source\HWSmultimedia.dpr
+  $(DCC)
+
+HWSlstsrv.exe: HWScontrol\source\HWSlstsrv.dpr
+  $(DCC)
+
+HWSusrinst.exe: HWScontrol\source\HWSusrinst.dpr
+  $(DCC)
+
+HWSrichlist.exe: HWScontrol\source\HWSrichlist.dpr
+  $(DCC)
+
+HWSusrsac.exe: HWScontrol\source\HWSusrsac.dpr
+  $(DCC)
+
+HWSusrsort.exe: HWScontrol\source\HWSusrsort.dpr
+  $(DCC)
+
+HWSnews.exe: HWScontrol\source\HWSnews.dpr
+  $(DCC)
+
+HWSstChat.exe: HWScontrol\source\HWSstChat.dpr
+  $(DCC)
+
+HWSmovtub.exe: HWScontrol\source\HWSmovtub.dpr
+  $(DCC)
+
+HWSfilemanager.exe: HWScontrol\source\HWSfilemanager.dpr
+  $(DCC)
+
+HWSshows.exe: HWScontrol\source\HWSshows.dpr
+  $(DCC)
+
+HWSturn.exe: HWScontrol\source\HWSturn.dpr
+  $(DCC)
+
+HWSfindweb.exe: HWScontrol\source\HWSfindweb.dpr
+  $(DCC)
+
+HWSevents.exe: HWScontrol\source\HWSevents.dpr
+  $(DCC)
+
+HWSlstprj2.exe: HWScontrol\source\HWSlstprj2.dpr
+  $(DCC)
+
+HWScontactlist.exe: HWScontrol\source\HWScontactlist.dpr
+  $(DCC)
+
+HWSstatgalery.exe: HWScontrol\source\HWSstatgalery.dpr
+  $(DCC)
+
+HWSclassgalery.exe: HWScontrol\source\HWSclassgalery.dpr
+  $(DCC)
+
+HWSlstprj.exe: HWScontrol\source\HWSlstprj.dpr
+  $(DCC)
+
+HWSusrcontact.exe: HWScontrol\source\HWSusrcontact.dpr
+  $(DCC)
+
+HWSrichgalery.exe: HWScontrol\source\HWSrichgalery.dpr
+  $(DCC)
+
+HWSdivulg.exe: HWScontrol\source\HWSdivulg.dpr
+  $(DCC)
+
+HWSlstnews.exe: HWScontrol\source\HWSlstnews.dpr
+  $(DCC)
+
+HWSusrsis.exe: HWScontrol\source\HWSusrsis.dpr
+  $(DCC)
+
+HWSdownhist.exe: HWScontrol\source\HWSdownhist.dpr
+  $(DCC)
+
+HWSrichnews.exe: HWScontrol\source\HWSrichnews.dpr
+  $(DCC)
+
+HWSrichestate.exe: HWScontrol\source\HWSrichestate.dpr
+  $(DCC)
+
+HWSusrwebsite.exe: HWScontrol\source\HWSusrwebsite.dpr
+  $(DCC)
+
+HWSusrassoc.exe: HWScontrol\source\HWSusrassoc.dpr
+  $(DCC)
+
+HWSusrcentral.exe: HWScontrol\source\HWSusrcentral.dpr
+  $(DCC)
+
+HWSrichmenu.exe: HWScontrol\source\HWSrichmenu.dpr
+  $(DCC)
+
+HWSrichcatalog.exe: HWScontrol\source\HWSrichcatalog.dpr
+  $(DCC)
+
+HWSlstinst.exe: HWScontrol\source\HWSlstinst.dpr
+  $(DCC)
+
+HWSlstrich.exe: HWScontrol\source\HWSlstrich.dpr
+  $(DCC)
+
+HWSrichservices.exe: HWScontrol\source\HWSrichservices.dpr
+  $(DCC)
+
+HWSrichemp.exe: HWScontrol\source\HWSrichemp.dpr
+  $(DCC)
+
+HWSevents2.exe: HWScontrol\source\HWSevents2.dpr
+  $(DCC)
+
+HWSrichdiscotxt.exe: HWScontrol\source\HWSrichdiscotxt.dpr
+  $(DCC)
+
+HWSrichnews2.exe: HWScontrol\source\HWSrichnews2.dpr
+  $(DCC)
+
+HWSrichdisco.exe: HWScontrol\source\HWSrichdisco.dpr
+  $(DCC)
+
+

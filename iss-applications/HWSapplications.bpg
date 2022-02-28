@@ -1,0 +1,26 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = HWScontrolSrv2.dll HWScontrolApp125.dll HWScontrolApp25vp.dll
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+HWScontrolSrv2.dll: HWScontrolSrv2\HWScontrolSrv2.dpr
+  $(DCC)
+
+HWScontrolApp125.dll: HWScontrolApp25\HWScontrolApp125.dpr
+  $(DCC)
+
+HWScontrolApp25vp.dll: HWScontrolApp25vp\HWScontrolApp25vp.dpr
+  $(DCC)
+
+

@@ -1,0 +1,3 @@
+snd0 RCDATA "alerta.wav"
+snd1 RCDATA "msg.wav"
+snd2 RCDATA "senmail.wav"

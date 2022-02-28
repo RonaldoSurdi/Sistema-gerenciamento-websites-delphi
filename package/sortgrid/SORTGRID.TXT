@@ -1,0 +1,51 @@
+********************************************************************************
+   Class: TSortGrid
+   Copyright © 1996
+   Author: Bill Menees
+           bmenees@usit.net
+           www.public.usit.net/bmenees
+
+********************************************************************************
+	Well, here's my foray into the wonderful world of TStringGrid descendents. I primarily wanted the ability to click a column header and have it sort the grid by that column.  I also wanted a method to AutoSize a column.  Then I just went nuts and started throwing in everything else I could think of.  Ultimately, I made a lot of improvements to TStringGrid.
+
+   New Procedures and Functions:
+       MoveTo, Clear, InsertRow, InsertColumn, DeleteRow, DeleteColumn,
+       MoveRow, MoveColumn, SwapRows, SwapColumns, AutoSizeCol,
+       AutoSizeColumns, SortByColumn, IsCell, LoadFromFile, SaveToFile,
+       CanUndoSort, UndoSort, GetCellDrawState, SelectCell, ValidateCell
+
+   New Properties:
+       AlignmentHorz, AlignmentVert, ClickSorting, BevelStyle, ExtendedKeys, 
+       ProportionalScrollBars, Sorting (run-time only), Modified (run-time only)
+
+   New Events:
+       OnGetCellFormat, OnClickSort, OnRowInsert, OnRowDelete, OnColumnInsert,
+       OnColumnDelete, OnColumnWidthsChanged, OnRowHeightsChanged, OnBeginSort,
+       OnEndSort, OnSizeChanged, OnCellValidate
+
+	When you left click a column header it ascending sorts the rows using that column as a key.  A right click does a descending sort.  The sort style defaults to automatic which means it figures out whether to do an alphabetic, numeric, or date sort depending on what type of data is in the column.
+
+	ExtendedKeys allows you to insert and delete rows at run time with a keypress.  This defaults to False.  When True, Ctrl+Ins inserts a row, and Ctrl+Shift+Ins inserts a column.  Similarly, Ctrl+Del deletes a row, and Ctrl+Shift+Del deletes a column.
+
+********************************************************************************
+   Known Bugs/Features/Issues:
+
+	The OnRowMoved event does NOT get called during a sort because I don't use the MoveRow function.  It was way too slow.  I copy everything out of the grid in sorted order and then put it back in.  This way is much faster (and easier to program) than a method using MoveRow.  If you need to know the final state of the grid after a sort, use the OnEndSort event.
+      
+********************************************************************************
+   Revision History:
+
+           10/08/96 - Work began.
+      1.0: 10/14/96 - Initial Release.
+
+********************************************************************************
+   Other Comments:
+
+	TSortGrid requires the two files SortGrid.Pas and SortGrid.Res.  When installed it places itself on the 'Additional' palette page.
+
+	Please test this component out and let me know what you think.  I'm open to any suggestions, especially bug fixes.  You can e-mail me at bmenees@usit.net, and you can download the latest version of TSortGrid (and some of my other fabulous programs… :-) at my web page: http://www.public.usit.net/bmenees.  
+
+	TSortGrid is freeware, and it includes it's source code.  It is not public domain software because I (the author) retain all rights to it.  However, please feel free to distribute it far and wide in it's unmodified, shipping form.  However, before you distribute it please take the time to get the latest version of it from my web page.  Any time I fix a bug or add a feature, it will be posted to my web page first.
+
+	Standard Disclaimer:  This software is provided AS IS without warranty of any kind, either expressed or implied.  The entire risk as to the quality and performance of the software is with you.  Should the software prove defective, you assume the cost of all necessary servicing, repair, or correction.  In no event shall the author, copyright holder, or any other party who may redistribute the software be liable to you for damages, including any general, special, incidental, or consequential damages arising out of the use or inability to use the software (including, but not limited to, loss of data, data being rendered inaccurate, loss of business profits, loss of business information, business interruptions, loss sustained by you or third parties, or a failure of the software to operate with any other software) even if the author, copyright holder, or other party has been advised of the possibility of such damages.
+

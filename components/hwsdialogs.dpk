@@ -1,0 +1,67 @@
+{###############################################################################
+Programa: HWSdialogs
+Módulo: Pacote contendo Dialogs e funções distribuidadas para os módulos.
+Data: 27 de setembro de 2004.
+By HWS Web Solutions
+
+Relatório de acessos:
+27/09/2004 - Ronaldo Surdi //Codigicação do módulo.
+###############################################################################}
+
+package hwsdialogs;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'HWS Dialogs'}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  vcljpg,
+  hws,
+  vcldb,
+  dbrtl,
+  vclx,
+  vclactnband,
+  designide,
+  vclshlctrls,
+  inet,
+  Intraweb_50_70,
+  visualclx;
+
+contains
+  hwsfunctions in 'hwsfunctions.pas',
+  uBt_Aviso in 'uBt_Aviso.pas' {Bt_Aviso},
+  uBt_Confirma in 'uBt_Confirma.pas' {Bt_Confirma},
+  uBt_Digitarsenha in 'uBt_digitarsenha.pas' {Bt_digitarsenha},
+  uBt_Mensagem in 'uBt_Mensagem.pas' {Bt_Mensagem},
+  uSobre in 'uSobre.pas' {Sobre},
+  uloading in 'uloading.pas' {floading},
+  reinit in 'reinit.pas',
+  uBt_open in 'uBt_open.pas' {Bt_open},
+  uBt_desc in 'uBt_desc.pas' {Bt_desc},
+  uBt_path in 'uBt_path.pas' {Bt_path},
+  uBt_search in 'uBt_search.pas' {Bt_search};
+
+end.

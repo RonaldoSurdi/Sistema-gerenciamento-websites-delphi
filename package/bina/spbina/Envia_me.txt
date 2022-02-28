@@ -1,0 +1,6 @@
+********************************************************
+Caro Colega!
+Após fazer o teste em seu Modem, por favor, envie-me o  arquivo:
+ENVIA_ME.TXT,  que está na mesma pasta em que o executável está
+instalado, para que possamos incluir o resultado dos comandos
+AT, que a marca e modelo de seu modem aceita, em nossa relação.

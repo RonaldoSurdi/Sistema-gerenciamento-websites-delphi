@@ -1,0 +1,70 @@
+package Synapse;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl;
+
+contains
+  tlntsend in 'tlntsend.pas',
+  asn1util in 'asn1util.pas',
+  blcksock in 'blcksock.pas',
+  clamsend in 'clamsend.pas',
+  dnssend in 'dnssend.pas',
+  ftpsend in 'ftpsend.pas',
+  ftptsend in 'ftptsend.pas',
+  httpsend in 'httpsend.pas',
+  imapsend in 'imapsend.pas',
+  ldapsend in 'ldapsend.pas',
+  mimeinln in 'mimeinln.pas',
+  mimemess in 'mimemess.pas',
+  mimepart in 'mimepart.pas',
+  nntpsend in 'nntpsend.pas',
+  pingsend in 'pingsend.pas',
+  pop3send in 'pop3send.pas',
+  slogsend in 'slogsend.pas',
+  smtpsend in 'smtpsend.pas',
+  snmpsend in 'snmpsend.pas',
+  sntpsend in 'sntpsend.pas',
+  ssdotnet in 'ssdotnet.pas',
+  ssfpc in 'ssfpc.pas',
+  ssl_cryptlib in 'ssl_cryptlib.pas',
+  ssl_openssl in 'ssl_openssl.pas',
+  ssl_openssl_lib in 'ssl_openssl_lib.pas',
+  ssl_sbb in 'ssl_sbb.pas',
+  ssl_streamsec in 'ssl_streamsec.pas',
+  sslinux in 'sslinux.pas',
+  sswin32 in 'sswin32.pas',
+  synachar in 'synachar.pas',
+  synacode in 'synacode.pas',
+  synacrypt in 'synacrypt.pas',
+  synafpc in 'synafpc.pas',
+  synaicnv in 'synaicnv.pas',
+  synaip in 'synaip.pas',
+  synamisc in 'synamisc.pas',
+  synautil in 'synautil.pas',
+  synsock in 'synsock.pas';
+
+end.

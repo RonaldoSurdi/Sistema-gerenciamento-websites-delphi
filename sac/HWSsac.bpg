@@ -1,0 +1,49 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = HWSsac.exe HWSsacInstaller.exe HWSsacuninstall.exe HWSsaccad.exe \
+  HWSsacmail.exe HWSsacctconf.exe HWSsacchat.exe HWSsacconf.exe hws.bpl \
+  hwsdialogs.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+HWSsac.exe: HWSsac\source\HWSsac.dpr
+  $(DCC)
+
+HWSsacInstaller.exe: HWSsac\Install\HWSsacInstaller.dpr
+  $(DCC)
+
+HWSsacuninstall.exe: HWSsac\uninstall\HWSsacuninstall.dpr
+  $(DCC)
+
+HWSsaccad.exe: HWSsac\source\HWSsaccad.dpr
+  $(DCC)
+
+HWSsacmail.exe: HWSsac\source\HWSsacmail.dpr
+  $(DCC)
+
+HWSsacctconf.exe: HWSsac\source\HWSsacctconf.dpr
+  $(DCC)
+
+HWSsacchat.exe: HWSsac\source\HWSsacchat.dpr
+  $(DCC)
+
+HWSsacconf.exe: HWSsac\source\HWSsacconf.dpr
+  $(DCC)
+
+hws.bpl: package\hws.dpk
+  $(DCC)
+
+hwsdialogs.bpl: Dialogs\hwsdialogs.dpk
+  $(DCC)
+
+

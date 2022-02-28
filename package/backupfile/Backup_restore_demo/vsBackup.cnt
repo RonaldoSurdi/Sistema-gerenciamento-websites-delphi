@@ -1,0 +1,12 @@
+:BASE vsBackup.hlp
+:TITLE title of this help project
+1 License information=Licenseinformation@vsBackup.hlp
+1 Introduction
+2 Welcome=Welcome@vsBackup.hlp
+1 Backup
+2 Backup Tab=BackupTab@vsBackup.hlp
+1 Restore
+2 Restore Tab=RestoreTab@vsBackup.hlp
+1 Step By Step
+2 Step By Step Backup=StepByStepBackup@vsBackup.hlp
+2 Step By Step Restore=StepByStepRestore@vsBackup.hlp
